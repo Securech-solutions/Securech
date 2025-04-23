@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Securech | Innovative Security Solutions</title>
-    <meta name="description" content="Securech offers innovative security solutions for all your needs. Advanced, reliable, and smart technology for your safety.">
-    <meta name="keywords" content="security, technology, innovative, solutions, smart security, advanced technology">
-    <meta name="author" content="Securech">
-    <link rel="stylesheet" href="styles.css"> <!-- assuming you have a CSS file -->
-    <script src="script.js"></script> <!-- assuming you have a JS file -->
+    <title> Securech | Innovative Security Solutions </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to Securech</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-4" style="background-color: #3533cd;">
+        <div class="flex items-center pl-[1.5cm] pr-[1.5cm]"> <!-- Lisätty pr-[1.5cm] oikealle -->
+            <div class="font-semibold text-xl text-white">
+                Securech
+            </div>
+            <div class="flex items-center ml-auto">
+                <button id="search-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline mr-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.3-4.3"/>
+                    </svg>
+                </button>
+                <button id="menu-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </header>
-    <main>
-        <section id="home">
-            <h2>Innovative Security Solutions</h2>
-            <p>Discover our range of smart, advanced security products designed to protect you and your property.</p>
-        </section>
-        <section id="about">
-            <h2>About Securech</h2>
-            <p>At Securech, we specialize in innovative and reliable security solutions. Our technology integrates cutting-edge design with ease of use to deliver top-notch safety.</p>
-        </section>
-        <section id="products">
-            <h2>Our Products</h2>
-            <p>Explore our wide range of security products, including state-of-the-art cameras and monitoring systems.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with us for more information or to request a demo of our products.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Securech. All rights reserved.</p>
-    </footer>
 </body>
 </html>
