@@ -26,24 +26,20 @@
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
 
- <!-- Sivupalkki oikealta -->
-<div id="side-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1f2937] shadow-lg z-50 slide-menu menu-closed">
-    <div class="flex justify-end p-4">
-        <button id="close-button" class="text-white text-2xl font-bold hover:text-gray-400">&times;</button>
-    </div>
-    <div class="p-6 space-y-4 text-lg font-semibold text-white">
-        <div>Products & Solutions</div>
-        <div>Why Choose Us?</div>
-        <div>FAQ</div>
-        <div>About Securech</div>
-        <div>Contact Us</div>
-        <div>Terms of Use</div>
-    </div>
-</div>
-
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1f2937] shadow-lg z-50 slide-menu menu-closed">
+        <div class="flex justify-end p-4">
+            <button id="close-button" class="text-white text-2xl font-bold hover:text-gray-400">&times;</button>
+        </div>
+        <div class="p-6 space-y-4 text-lg font-semibold text-white">
+            <div>Products & Solutions</div>
+            <div>Why Choose Us?</div>
+            <div>FAQ</div>
+            <div>About Securech</div>
+            <div>Contact Us</div>
+            <div>Terms of Use</div>
+        </div>
     </div>
 
-    <!-- Header -->
     <header class="bg-white shadow-md py-4" style="background-color: #3533cd;">
         <div class="flex items-center pl-[1.5cm] pr-[1.5cm]">
             <div class="font-semibold text-xl text-white">
@@ -56,6 +52,14 @@
                         <path d="m21 21-4.3-4.3"/>
                     </svg>
                 </button>
+                <div id="search-input-container" class="absolute top-16 right-4 bg-white rounded-md shadow-lg overflow-hidden transition-all duration-300 transform origin-top-right scale-0 opacity-0">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search"
+                        class="px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                </div>
                 <button id="menu-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" x2="20" y1="12" y2="12"/>
@@ -71,6 +75,9 @@
         const menuButton = document.getElementById("menu-button");
         const closeButton = document.getElementById("close-button");
         const sideMenu = document.getElementById("side-menu");
+        const searchButton = document.getElementById('search-button');
+        const searchInputContainer = document.getElementById('search-input-container');
+        const searchInput = document.getElementById('search-input');
 
         menuButton.addEventListener("click", () => {
             sideMenu.classList.remove("menu-closed");
@@ -80,6 +87,30 @@
         closeButton.addEventListener("click", () => {
             sideMenu.classList.remove("menu-open");
             sideMenu.classList.add("menu-closed");
+        });
+
+        searchButton.addEventListener('click', () => {
+            searchInputContainer.classList.toggle('scale-0');
+            searchInputContainer.classList.toggle('opacity-0');
+            searchInputContainer.classList.toggle('scale-100');
+            searchInputContainer.classList.toggle('opacity-100');
+            if (!searchInputContainer.classList.contains('scale-0')) {
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                // Suorita haku täällä
+                const searchTerm = searchInput.value;
+                console.log('Haetaan:', searchTerm);
+                // Esimerkiksi: window.location.href = '/search?q=' + searchTerm;
+                searchInput.value = ''; // Tyhjennä kenttä
+                searchInputContainer.classList.add('scale-0');
+                searchInputContainer.classList.add('opacity-0');
+                searchInputContainer.classList.remove('scale-100');
+                searchInputContainer.classList.remove('opacity-100');
+            }
         });
     </script>
 </body>
