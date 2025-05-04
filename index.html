@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,18 @@
         .menu-closed {
             transform: translateX(100%);
         }
+
+        .nav-link {
+            margin-left: 0.5cm;
+            margin-right: 0.5cm;
+        }
+
+        .nav-separator {
+            margin-left: 0.25cm;
+            margin-right: 0.25cm;
+            color: #fff; /* Pystyviivan väri */
+        }
+
     </style>
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
@@ -44,11 +56,22 @@
     </div>
 
     <header class="bg-white shadow-md py-4" style="background-color: #003366;">
-        <div class="flex items-center pl-[1.5cm] pr-[1.5cm]">
+        <div class="flex items-center justify-between pl-[1.5cm] pr-[1.5cm]">
             <a href="/" class="font-semibold text-xl text-white no-underline">  Securech
             </a>
-            <div class="flex items-center ml-auto">
-                <button id="search-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline mr-12">
+            <nav class="flex items-center">
+                <a href="#" class="text-white hover:text-gray-300 nav-link">Tuotteet</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="text-white hover:text-gray-300 nav-link">Yhteystiedot</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="text-white hover:text-gray-300 nav-link">About Securech</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="text-white hover:text-gray-300 nav-link">FAQ</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="text-white hover:text-gray-300 nav-link">Why Choose Us?</a>
+            </nav>
+            <div class="flex items-center">
+                <button id="search-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline mr-6">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"/>
                         <path d="m21 21-4.3-4.3"/>
@@ -95,7 +118,6 @@
             searchInputContainer.classList.toggle('scale-0');
             searchInputContainer.classList.toggle('opacity-0');
             searchInputContainer.classList.toggle('scale-100');
-            searchInputContainer.classList.toggle('opacity-100');
             if (!searchInputContainer.classList.contains('scale-0')) {
                 searchInput.focus();
             }
@@ -115,5 +137,6 @@
             }
         });
     </script>
+
 </body>
 </html>
