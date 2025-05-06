@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Päällekkäinen Teksti Efekti</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .teksti-container {
+    position: relative;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .teksti-musta {
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .teksti-sininen {
+    color: #00BFFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translate(1px, 1px);
+  }
+</style>
+</head>
+<body>
+  <div class="teksti-container">
+    <div class="teksti-musta">SECURECH</div>
+    <div class="teksti-sininen">SECURECH</div>
+  </div>
+</body>
+</html>
 
