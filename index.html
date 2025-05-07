@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Securech | Innovative Security Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             height: 100vh;
-            background: linear-gradient(to bottom right, white, #007BFF); /* Liukuväri tausta */
+            background: linear-gradient(to bottom right, white, #007BFF);
         }
 
         .slide-menu {
@@ -34,27 +34,116 @@
         .nav-separator {
             margin-left: 0.25cm;
             margin-right: 0.25cm;
-            color: #fff; /* Pystyviivan väri */
+            color: #fff;
         }
 
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding-top: calc(100px + 2cm);
+            box-sizing: border-box;
+        }
+
+        .main-title {
+            color: #003366;
+            text-align: center;
+            padding: 20px;
+            max-width: 100%;
+            font-size: 2.25em;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        #side-menu {
+            top: 0;
+        }
+
+        .sub-title {
+            color: #003366;
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            white-space: nowrap;
+        }
+
+        .cta-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 0.75em 1.5em;
+            border-radius: 2em;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 1em;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .arrow-icon {
+            width: 0.5em;
+            height: 0.5em;
+            border-top: 0.15em solid white;
+            border-right: 0.15em solid white;
+            transform: rotate(-45deg);
+        }
+
+        .cta-button.right-arrow .arrow-icon {
+            transform: rotate(45deg);
+        }
+
+        .sub-content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 1em;
+        }
+
+        .sub-title {
+            margin-right: 2em;
+            text-align: right;
+        }
+
+        .divider {
+            width: calc(100% - 4cm);
+            height: 0.125cm;
+            background-color: #fff;
+            margin-top: calc(2em + 3cm);
+            margin-left: 2cm;
+            margin-right: 2cm;
+        }
+
+        .products-text { /* Uusi CSS-luokka "Tuotteet" tekstiä varten */
+            color: #003366;
+            font-size: 2.25em;  /* Sama kuin pääotsikolla */
+            font-weight: bold; /* Sama kuin pääotsikolla */
+            margin-top: calc(2em + 3cm); /* Sijoitus samalle etäisyydelle kuin katkoviiva */
+            text-align: center; /* Keskitä teksti */
+        }
     </style>
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
-
-    <div id="side-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1f2937] shadow-lg z-50 slide-menu menu-closed">
-        <div class="flex justify-end p-4">
-            <button id="close-button" class="text-white text-2xl font-bold hover:text-gray-400">&times;</button>
-        </div>
-        <div class="p-6 space-y-4 text-lg font-semibold text-white">
-            <div>Products & Solutions</div>
-            <div>Why Choose Us?</div>
-            <div>FAQ</div>
-            <div>About Securech</div>
-            <div>Contact Us</div>
-            <div>Terms of Use</div>
-        </div>
-    </div>
-
     <header class="bg-white shadow-md py-4" style="background-color: #003366;">
         <div class="flex items-center justify-between pl-[1.5cm] pr-[1.5cm]">
             <a href="/" class="font-semibold text-xl text-white no-underline">  Securech
@@ -82,8 +171,7 @@
                         type="text"
                         id="search-input"
                         placeholder="Search"
-                        class="px-4 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-primary border-2 border-black rounded-md"
-                    />
+                        class="px-4 py-2 w-64 focus:outline-none focus:shadow-outline">
                 </div>
                 <button id="menu-button" class="text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -95,7 +183,31 @@
             </div>
         </div>
     </header>
-
+    <main class="main-content">
+        <h1 class="main-title">Tarjoamme turvallisuustuotteita, jotka vastaavat tarpeisiisi.</h1>
+        <div class="sub-content-container">
+            <p class="sub-title">Uudenlaiset ja modernit turvallisuusratkaisut yrityksille ja yksityishenkilöille</p>
+            <a href="#" class="cta-button right-arrow">
+                Tutustu tuotteisiimme!
+                <span class="arrow-icon"></span>
+            </a>
+        </div>
+        <div class="divider"></div>
+        <p class="products-text">Tuotteet</p>
+    </main>
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-64 bg-[#1f2937] shadow-lg z-50 slide-menu menu-closed">
+        <div class="flex justify-end p-4">
+            <button id="close-button" class="text-white text-2xl font-bold hover:text-gray-400">&times;</button>
+        </div>
+        <div class="p-6 space-y-4 text-lg font-semibold text-white">
+            <div>Products & Solutions</div>
+            <div>Why Choose Us?</div>
+            <div>FAQ</div>
+            <div>About Securech</div>
+            <div>Contact Us</div>
+            <div>Terms of Use</div>
+        </div>
+    </div>
     <script>
         const menuButton = document.getElementById("menu-button");
         const closeButton = document.getElementById("close-button");
@@ -117,7 +229,6 @@
         searchButton.addEventListener('click', () => {
             searchInputContainer.classList.toggle('scale-0');
             searchInputContainer.classList.toggle('opacity-0');
-            searchInputContainer.classList.toggle('scale-100');
             if (!searchInputContainer.classList.contains('scale-0')) {
                 searchInput.focus();
             }
@@ -125,11 +236,9 @@
 
         searchInput.addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {
-                // Suorita haku täällä
                 const searchTerm = searchInput.value;
                 console.log('Haetaan:', searchTerm);
-                // Esimerkiksi: window.location.href = '/search?q=' + searchTerm;
-                searchInput.value = ''; // Tyhjennä kenttä
+                searchInput.value = '';
                 searchInputContainer.classList.add('scale-0');
                 searchInputContainer.classList.add('opacity-0');
                 searchInputContainer.classList.remove('scale-100');
@@ -137,6 +246,5 @@
             }
         });
     </script>
-
 </body>
 </html>
