@@ -134,20 +134,26 @@
             margin-right: 2cm;
         }
 
-        .products-text { /* Uusi CSS-luokka "Tuotteet" tekstiä varten */
+        .products-text {
             color: #003366;
-            font-size: 2.25em;  /* Sama kuin pääotsikolla */
-            font-weight: bold; /* Sama kuin pääotsikolla */
-            margin-top: calc(2em + 3cm); /* Sijoitus samalle etäisyydelle kuin katkoviiva */
-            text-align: center; /* Keskitä teksti */
+            font-size: 2.25em;
+            font-weight: bold;
+            margin-top: calc(2em + 3cm);
+            text-align: center;
+        }
+
+        /* ✅ Kehys hakupalkille kun se avataan */
+        #search-input-container.active {
+            border: 1px solid black;
+            border-radius: 0.375rem;
+            background-color: white;
         }
     </style>
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
     <header class="bg-white shadow-md py-4" style="background-color: #003366;">
         <div class="flex items-center justify-between pl-[1.5cm] pr-[1.5cm]">
-            <a href="/" class="font-semibold text-xl text-white no-underline">  Securech
-            </a>
+            <a href="/" class="font-semibold text-xl text-white no-underline">Securech</a>
             <nav class="flex items-center">
                 <a href="#" class="text-white hover:text-gray-300 nav-link">Tuotteet</a>
                 <span class="nav-separator">|</span>
@@ -229,6 +235,7 @@
         searchButton.addEventListener('click', () => {
             searchInputContainer.classList.toggle('scale-0');
             searchInputContainer.classList.toggle('opacity-0');
+            searchInputContainer.classList.toggle('active');
             if (!searchInputContainer.classList.contains('scale-0')) {
                 searchInput.focus();
             }
@@ -241,8 +248,7 @@
                 searchInput.value = '';
                 searchInputContainer.classList.add('scale-0');
                 searchInputContainer.classList.add('opacity-0');
-                searchInputContainer.classList.remove('scale-100');
-                searchInputContainer.classList.remove('opacity-100');
+                searchInputContainer.classList.remove('active');
             }
         });
     </script>
